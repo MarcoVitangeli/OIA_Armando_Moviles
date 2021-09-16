@@ -22,13 +22,13 @@ Se debe generar un archivo colgantes.out en el directorio actual con una única 
 Ejemplo
 Si la entrada colgantes.in fuera: 
 
-6
-4
-3
-1
-2
-3
-1 
+6 <br />
+4 <br />
+3 <br />
+1 <br />
+2 <br />
+3 <br />
+1 <br />
 
 La salida colgantes.outdebería ser:
 
