@@ -1,7 +1,7 @@
 package solucion;
 import java.util.Objects;
 
-public class Colgante implements Comparable<Colgante>{
+public class Colgante {
 	private int peso;
 	
 	public Colgante(int peso) {
@@ -29,10 +29,10 @@ public class Colgante implements Comparable<Colgante>{
 		return peso == other.peso;
 	}
 
-	@Override
-	public int compareTo(Colgante o) {
-		return this.peso-o.peso;
-	}
-	
-	
+//	@Override
+//	public int compareTo(Colgante o) {
+//		return this.peso-o.peso;
+//	}
+//	
+//	
 }

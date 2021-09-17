@@ -1,7 +1,8 @@
 package solucion;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Movil {
 	private List<Colgante> colgantes;
@@ -12,27 +13,34 @@ public class Movil {
 	}
 	
 	public String cantMoviles() {
-		int cantVar = 0;
+		
+		Map<Colgante,Integer> frecuencia = new HashMap<Colgante,Integer>();
+		int varillas = 0;
 		int maxPeso = 0;
 		
-		Collections.sort(colgantes);
+		System.out.println("SIZE OF COLGANTES == "+colgantes.size());
 		
-		for(int i=0;i<colgantes.size()-1;i++) {
-			
-			if(colgantes.get(i).equals(colgantes.get(i+1))) {
-				cantVar++;
-				
-				if(i != colgantes.size()-2) {
-					maxPeso += colgantes.get(i).getPeso()*2;
-				}
-				
-				colgantes.remove(i+1);
-				
-				colgantes.add(new Colgante(colgantes.get(i).getPeso()*2));
-			}
-			
+		for(Colgante c : colgantes) {
+			frecuencia.put(c,frecuencia.getOrDefault(c,0)+1);
 		}
 		
-		return cantVar == 0?"no se puede":maxPeso+" "+cantVar;
+		System.out.println("SIZE OF MAP == "+frecuencia.keySet().size());
+		
+		for(Colgante c : frecuencia.keySet()) {
+			
+			int apariciones = frecuencia.get(c);
+			
+//			if(apariciones%2 != 0) {
+//				apariciones--;
+//			}
+//			
+			if(apariciones >= 2) {
+				varillas += apariciones/2;
+				maxPeso  += c.getPeso()*2 * (apariciones/2);
+			}
+		}
+		
+		return varillas == 0?"no se puede":maxPeso+" "+varillas;
 	}
+		
 }
