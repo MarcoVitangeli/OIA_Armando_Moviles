@@ -29,10 +29,4 @@ public class Colgante {
 		return peso == other.peso;
 	}
 
-//	@Override
-//	public int compareTo(Colgante o) {
-//		return this.peso-o.peso;
-//	}
-//	
-//	
 }
