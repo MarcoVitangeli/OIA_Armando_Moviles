@@ -19,7 +19,7 @@ public class FileHandler {
 		this.outputPath = outputPath;
 	}
 	
-	public Movil readFile() throws FileNotFoundException{
+	public List<Colgante> parsearColgantes() throws FileNotFoundException{
 		Scanner in = new Scanner(new File(inputPath));
 		
 		int c = in.nextInt();
@@ -31,7 +31,7 @@ public class FileHandler {
 		
 		in.close();
 		
-		return new Movil(lista);
+		return lista;
 	}
 	
 	public void writeFile(String output) throws IOException {
