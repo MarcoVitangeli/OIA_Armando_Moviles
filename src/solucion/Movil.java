@@ -18,22 +18,14 @@ public class Movil {
 		int varillas = 0;
 		int maxPeso = 0;
 		
-		System.out.println("SIZE OF COLGANTES == "+colgantes.size());
-		
 		for(Colgante c : colgantes) {
 			frecuencia.put(c,frecuencia.getOrDefault(c,0)+1);
 		}
 		
-		System.out.println("SIZE OF MAP == "+frecuencia.keySet().size());
-		
 		for(Colgante c : frecuencia.keySet()) {
 			
 			int apariciones = frecuencia.get(c);
-			
-//			if(apariciones%2 != 0) {
-//				apariciones--;
-//			}
-//			
+				
 			if(apariciones >= 2) {
 				varillas += apariciones/2;
 				maxPeso  += c.getPeso()*2 * (apariciones/2);
